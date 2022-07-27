@@ -16,10 +16,10 @@ app.use(cors());
 app.use("/api", router);
 
 // NotFoundPage middleware
-router.use("/*", routeNotImplemented);
+app.use("/*", routeNotImplemented);
 
 // Error middleware
-router.use(errorMiddleware);
+app.use(errorMiddleware);
 
 //--------------------------------------------
 // inicio el servidor

@@ -16,8 +16,7 @@ class ProductDao extends ContainerDao {
         .then(existTable => {
           if(!existTable) {
             knexLib.schema.createTable(collection, table => productSchema(table))
-            .then(() => console.log(`${collection} table created!`));
-            ;
+              .then(() => console.log(`${collection} table created!`));
           } else console.log(`skipping creation ${collection}...`);
         })
         .catch(error => console.log(`Error al conectar [${collection}]: `, error))
